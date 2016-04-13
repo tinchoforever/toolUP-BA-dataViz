@@ -14,52 +14,18 @@
 
     <script type="text/javascript">
  
-    var width = 250;
-    var height = 250;
 
-    var svg = d3.select("#viz")
-                .append("svg")
-                .attr("width", width)
-                .attr("height", height);
 
- 
-    var x = d3.scale.linear()
-                    .domain ([0, 20])
-                    .range([0, width]);
-    var y = d3.scale.linear()
-                    .domain ([0, 20])
-                    .range([height, 0]);
- 
-    var datos = [[10,8.04],[8,6.95],[13,7.58],[9,8.81],[11,8.33],[14,9.96],[6,7.24],[4,4.26],[12,10.84],[7,4.82],[5,5.68]];
- 
-    svg.selectAll("xline")
-        .data(x.ticks(20))
-        .enter().append("line")
-        .attr("x1", x)
-        .attr("x2", x)
-        .attr("y1", 0)
-        .attr("y2", height)
-        .style("stroke", "#ccc");
- 
-    svg.selectAll("yline")
-       .data(y.ticks(20))
-       .enter().append("line")
-       .attr("y1", y)
-       .attr("y2", y)
-       .attr("x1", 0)
-       .attr("x2", width)
-       .style("stroke", "#ccc");
- 
-    svg.selectAll("cirlce")
-       .data(datos)
-       .enter()
-       .append("circle")
-       .style("stroke", "red")
-       .style("fill", "orange")
-       .attr("r", 5)
-       .attr("cx", function(d) { return x(d[0]); } )
-       .attr("cy", function(d) { return y(d[1]); } );
- 
+
+    var body = d3.select("body");
+    var div = body.append("div");
+    div.html("Hello, world!");
+
+
+  
+    d3.select("body")
+    .style("color", "white")
+    .style("background-color", "black");
 
 
     </script>

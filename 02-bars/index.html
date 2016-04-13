@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+    <style>
+      html {
+        font-family: 'Roboto', sans-serif;
+      }
+      .chart div {
+        font: 10px sans-serif;
+        background-color: steelblue;
+        text-align: right;
+        padding: 3px;
+        margin: 1px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Primer ejemplo con D3js</h1>
+   <div class="chart">
+  <div style="width: 40px;">4</div>
+  <div style="width: 80px;">8</div>
+  <div style="width: 150px;">15</div>
+  <div style="width: 160px;">16</div>
+  <div style="width: 230px;">23</div>
+  <div style="width: 420px;">42</div>
+</div>
+
+
+    <script type="text/javascript">
+ 
+
+
+    var data = [4, 8, 15, 16, 23, 42];
+
+
+    d3.select(".chart")
+      .selectAll("div")
+        .data(data)
+      .enter().append("div")
+        .style("width", function(d) { return d * 10 + "px"; })
+        .text(function(d) { return d; });
+
+
+    </script>
+  </body>
+</html>
+
